@@ -1,7 +1,7 @@
 version: '3.3'
 services:
         nginx:
-                image: jacobboardman/amnginx
+                image: amnginx
                 container_name: nginx
 
                 ports:
@@ -20,5 +20,5 @@ services:
                           source: /var/run/docker.sock
                           target: /var/run/docker.sock
         client:
-                image: jacobboardman/amclient
+                image: amclient
                 container_name: client
