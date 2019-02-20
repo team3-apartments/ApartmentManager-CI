@@ -3,7 +3,9 @@ services:
         nginx:
                 image: amnginx
                 container_name: nginx
-
+                depends_on:
+                        - client
+                        - service
                 ports:
                         - target: 80
                           published: 80
@@ -22,3 +24,12 @@ services:
         client:
                 image: amclient
                 container_name: client
+                ports:
+                        - target: 3000
+                          published: 3000
+        service:
+                ports:
+                        - target: 8081
+                          published: 8081
+                image: amservice
+                container_name: service
