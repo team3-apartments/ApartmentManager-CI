@@ -60,6 +60,12 @@ services:
                           published: 8088
                 image: amverify
                 container_name: verify
+        colourgen:
+                ports: 
+                        - target: 8083
+                          published: 8083
+                image: amcolourgen
+                container_name: colourgen                
         mongodb: 
                 image: mongo:latest
                 ports: 
