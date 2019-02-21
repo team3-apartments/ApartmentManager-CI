@@ -6,7 +6,9 @@ services:
                 depends_on:
                         - client
                         - service
-                        - login
+                        - consumer
+                        - mongoretriever
+                        - verify
                 ports:
                         - target: 80
                           published: 80
