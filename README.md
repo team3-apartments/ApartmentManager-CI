@@ -27,7 +27,7 @@ YOu will be able to check the logs of each container by using `docker logs {cont
 There should currently be jenkins folder in the base vm currently runnig for the project. Inside this there is a jobs folder. you will have to follow these commands from the root.
 ```
 cd jenkins/
-sudo docker cp jobs/ jenkins:/var/jenkins_home/jobs/
+sudo docker cp jobs/ jenkins:/var/jenkins_home/
 ```
 
 Then go to the jenkins on *http://apartment-manager.uksouth.cloudapp.azure.com:8080/* log back in and hopefully the jobs should be there
