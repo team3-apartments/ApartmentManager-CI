@@ -9,6 +9,7 @@ services:
                         - consumer
                         - mongoretriever
                         - verify
+                        - colourgen
                 ports:
                         - target: 80
                           published: 80
