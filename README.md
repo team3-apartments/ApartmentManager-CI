@@ -9,25 +9,18 @@ We also have the docker-compose.yaml file which sets up all the services with th
 Lastly we have the nginx.conf file we create to setup up using our created certificate for ssl encryption, to secure an encrypted link between the browser and the web server. In this we also have the proxy passing whichlooks out for a specific url point after the base url and then sends it to that requested url, which in our case will be the different services. 
 
 ### Instructions
+**TO USE ANY docker-compse COMMANDS YOU NEED A docker-compose.yaml FILE PRESENT IN THE DIRECTORY**
 
-In this repository when cloned down and then entered with a commond prompt to **ONLY** use `docker-compose up -d` to start all services at the start (but will currenlty have no jobs). **NEVER** use `docker-compose down` on it's own as currently it will stop all the containers and deleted their images, this will make you lose all of the Jenkins jobs.
+In this repository when cloned down and then entered with a commond prompt to **ONLY** use `docker-compose up -d` to start all services at the same time. You can use `docker-compose down` to stop and delete all of the services containers.
 
-If you are needing to restart a container I recommend using `docker-compose restart {service name}` or you could use:
+If you are needing to restart a specfic container(s) I recommend using `docker-compose restart {service name}` or you could use:
 ```
 docker-compose down {service name}
 docker-compose up -d {service name}
 ```
 
+These can also be added onto and do multiple at eh same time with `docker-compose`
+
 The name of the services can be found inside of the docker-compose.yaml.
 
-YOu will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
-
-##Solving having no jobs/deleted jobs by accident
-
-There should currently be jenkins folder in the base vm currently runnig for the project. Inside this there is a jobs folder. you will have to follow these commands from the root.
-```
-cd jenkins/
-sudo docker cp jobs/ jenkins:/var/jenkins_home/
-```
-
-Then go to the jenkins on *http://apartment-manager.uksouth.cloudapp.azure.com:8080/* log back in and hopefully the jobs should be there
+You will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
