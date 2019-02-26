@@ -19,7 +19,9 @@ docker-compose down {service name}
 docker-compose up -d {service name}
 ```
 
-These can also be added onto and do multiple at eh same time with `docker-compose resart {service name} {service name} ...` for example
+These can also be added onto and do multiple at eh same time with 
+`docker-compose resart {service name} {service name} ...` 
+For example
 
 The name of the services can be found inside of the docker-compose.yaml.
 
