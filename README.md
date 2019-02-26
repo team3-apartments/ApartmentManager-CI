@@ -10,6 +10,10 @@ Lastly we have the nginx.conf file we create to setup up using our created certi
 
 ### Instructions
 
-In this repository when cloned down and then entered with a commond prompt to **ONLY** use '''docker-compose up -d''' to start all services at the start (but will currenlty have no jobs).**NEVER** use '''docker-compose down''' on it's own as currently it will stop all the containers and deleted their images, this will make you lose all of the Jenkins jobs.
+In this repository when cloned down and then entered with a commond prompt to **ONLY** use `docker-compose up -d` to start all services at the start (but will currenlty have no jobs).**NEVER** use `docker-compose down` on it's own as currently it will stop all the containers and deleted their images, this will make you lose all of the Jenkins jobs.
 
-If you are neededing to restart a container I recommend using docker-compose restart {service name}
+If you are needing to restart a container I recommend using `docker-compose restart {service name}` or you could use:
+```
+docker-compose down {service name}
+docker-compose up -d {service name}
+```
