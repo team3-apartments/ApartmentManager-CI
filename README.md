@@ -29,7 +29,7 @@ Use this `docker ps` to see all the containers and if they are down, then you wi
 
 # Restarting Jenkins
 
-If you have restarted the Jenkins service and its container, then it will have lost it's docker-compopse commands which are requiredin the pipeline.
+If you have restarted the Jenkins service and its container, then it will have lost it's docker-compose commands which are required in the pipeline.
 
 To fix you will have to follw these commands in the VM(Virtual Machine) CMD(Command Line)
 ```
