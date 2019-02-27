@@ -1,41 +1,43 @@
 # ApartmentManager-CI
 
-### Files inside
+### Files in Repo
 
-In here we have the Dockerfile for adding the nginx.conf file that we ahve created into the new image we are going to make.
+We have the Dockerfile for adding the nginx.conf file that we have created into the new docker image of nginx we are going to make.
 
-We also have the docker-compose.yaml file which sets up all the services with the image they are going to use, their container name (as we only want to have one instance of this running), and then selecting the ports that the conatiner needs to run on.
+We also have the docker-compose.yaml file which sets up all the services with the docker image they are going to use, their container name (as we only want to have one instance of this running), and selecting the ports that the conatiner needs to run on.
 
-Lastly we have the nginx.conf file that we created to setup with our certificate for ssl encryption, to secure an encrypted link between the browser and the web server. In this we also have the proxy passing whichlooks out for a specific url point after the base url and then sends it to that requested url, which in our case will be the different services. 
+Lastly, we have the nginx.conf file that we created, to setup our certificate for ssl encryption, to secure an encrypted link between the browser and the web server. Also, the proxy passing which seeks for a specific url point after the base url. It is sent to the requested url, which in our case, will be the different services. 
 
 # Instructions
 **To use any docker-compose commands you need a docker-compose.yaml file present in the directoty**
 
-In this repository when cloned down and then entered with a commond prompt to **ONLY** use `docker-compose up -d` to start all services at the same time. You can use `docker-compose down` to stop and delete all of the services containers.
+When this repository is cloned down and entered with a commond prompt, **ONLY** use `docker-compose up -d` to start all services at the same time. You can use `docker-compose down` to stop and delete all of the services' containers.
 
-If you are needing to restart a specfic container(s) I recommend using `docker-compose restart {service name}` or you could use:
+If a specfic container needs to be restarted, I recommend using `docker-compose restart {service name}` or:
 ```
 docker-compose down {service name}
 docker-compose up -d {service name}
 ```
 
-These can also be added onto and do multiple at eh same time with 
+If multiple containers need to be restarted:
+```
 `docker-compose resart {service name} {service name} ...` 
+```
 For example
 
 The name of the services can be found inside of the docker-compose.yaml.
 
-Use this `docker ps` to see all the containers and if they are down, then you will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
+Use `docker ps` to view all containers. If they are down, logs can be examined for each container by entering `docker logs {container name}` (found in the docker-compose.yaml file).
 
 # Restarting Jenkins
 
-If you have restarted the Jenkins service and its container, then it will have lost it's docker-compose commands which are required in the pipeline.
+If the Jenkins service and its container have been restarted, it will lose its docker-compose commands. **DOCKER-COMPOSE REQUIRED IN THE PIPELINE**
 
-To fix you will have to follw these commands in the VM(Virtual Machine) CMD(Command Line)
+Docker-compose will have to be reinstalled by follwing the following commands in the VM(Virtual Machine), CMD(Command Line):
 ```
 docker exec -it jenkins bash
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 exit
 ```
-These commands will let you enter the jenkins container using bash then instlling docker-compose, next line is giving it the executable modifier, which lets it able to execute commands, and lastly exit to leave the jenkins container. 
+These commands allow the jenkins container to be entered using bash then installing docker-compose. The next line gives it the executable modifier, which allows commands to execute. Finally, 'exit' leaves the jenkins container. 
