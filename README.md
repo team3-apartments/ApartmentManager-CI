@@ -27,7 +27,7 @@ The name of the services can be found inside of the docker-compose.yaml.
 
 Use this `docker ps` to see all the containers and if they are down, then you will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
 
-#Restarting Jenkins
+# Restarting Jenkins
 
 If you have restarted the Jenkins service and its container, then it will have lost it's docker-compopse commands which are requiredin the pipeline.
 
