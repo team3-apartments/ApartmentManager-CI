@@ -6,7 +6,7 @@ In here we have the Dockerfile for adding the nginx.conf file that we ahve creat
 
 We also have the docker-compose.yaml file which sets up all the services with the image they are going to use, their container name (as we only want to have one instance of this running), and then selecting the ports that the conatiner needs to run on.
 
-Lastly we have the nginx.conf file we create to setup up using our created certificate for ssl encryption, to secure an encrypted link between the browser and the web server. In this we also have the proxy passing whichlooks out for a specific url point after the base url and then sends it to that requested url, which in our case will be the different services. 
+Lastly we have the nginx.conf file that we created to setup with our certificate for ssl encryption, to secure an encrypted link between the browser and the web server. In this we also have the proxy passing whichlooks out for a specific url point after the base url and then sends it to that requested url, which in our case will be the different services. 
 
 # Instructions
 **To use any docker-compose commands you need a docker-compose.yaml file present in the directoty**
