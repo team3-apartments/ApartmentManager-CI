@@ -25,4 +25,17 @@ For example
 
 The name of the services can be found inside of the docker-compose.yaml.
 
-You will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
+Use this `docker ps` to see all the containers and if they are down, then you will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
+
+##Restarting Jenkins
+
+If you have restarted the Jenkins service and its container, then it will have lost it's docker-compopse commands which are requiredin the pipeline.
+
+To fix you will have to follw these commands in the VM(Virtual Machine) CMD(Command Line)
+```
+docker exec -it jenkins bash
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+exit
+```
+These commands will let you enter the jenkins container using bash then instlling docker-compose, next line is giving it the executable modifier, which lets it able to execute commands, and lastly exit to leave the jenkins container. 
