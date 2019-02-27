@@ -8,7 +8,7 @@ We also have the docker-compose.yaml file which sets up all the services with th
 
 Lastly we have the nginx.conf file we create to setup up using our created certificate for ssl encryption, to secure an encrypted link between the browser and the web server. In this we also have the proxy passing whichlooks out for a specific url point after the base url and then sends it to that requested url, which in our case will be the different services. 
 
-### Instructions
+# Instructions
 **To use any docker-compose commands you need a docker-compose.yaml file presetn in the directoty**
 
 In this repository when cloned down and then entered with a commond prompt to **ONLY** use `docker-compose up -d` to start all services at the same time. You can use `docker-compose down` to stop and delete all of the services containers.
@@ -27,7 +27,7 @@ The name of the services can be found inside of the docker-compose.yaml.
 
 Use this `docker ps` to see all the containers and if they are down, then you will be able to check the logs of each container by using `docker logs {container name}` which can also be found in the docker-compose.yaml file.
 
-##Restarting Jenkins
+#Restarting Jenkins
 
 If you have restarted the Jenkins service and its container, then it will have lost it's docker-compopse commands which are requiredin the pipeline.
 
